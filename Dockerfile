@@ -36,5 +36,7 @@ RUN apt-get update && apt-get -y install tor deb.torproject.org-keyring
 # Install Python dependencies
 RUN pip3 install -r requirements.txt
 
+RUN python3 setup.py install
+
 # Start the startup script
 ENTRYPOINT [""]
