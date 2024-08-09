@@ -38,7 +38,8 @@ RUN pip3 install -r requirements.txt
 
 RUN python3 setup.py install
 
+RUN mkdir -p /root/codes/opt
+RUN chmod 770 /root/codes/opt
 
 
-# Start the startup script
 ENTRYPOINT ["python3 app.py"]
