@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onion Search</title>
+</head>
+<body>
+    <h1>Onion Search</h1>
+    
+    <form method="POST">
+        <label for="search_query">Search Query (max 25 characters):</label>
+        <input type="text" id="search_query" name="search_query" maxlength="25" required>
+        <button type="submit">Search</button>
+    </form>
+    
+    {% if results %}
+        <h2>Search Results for "{{ search_query }}"</h2>
+        <pre>{{ results }}</pre>
+    {% elif error %}
+        <h2>Error</h2>
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
