@@ -23,7 +23,7 @@ def index():
         # Generate the output file name with the current date and time
         timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
         output_file_name = f"{sanitized_query}_{timestamp}.txt"
-        output_file_path = os.path.join('/opt', output_file_name)
+        output_file_path = os.path.join('./opt', output_file_name)
         
         # Construct the command to run OnionSearch with the search query and proxy
         cmd = [
@@ -56,4 +56,4 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=4000)
